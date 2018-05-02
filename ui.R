@@ -10,7 +10,7 @@ library(plotly)
 shinyUI(dashboardPage(skin = "black",
     dashboardHeader(title = "FDA Adverse Event Data"),
     dashboardSidebar(
-      sidebarUserPanel("Marius"),
+      sidebarUserPanel("Marius Popa", image="m1.jpg"),
       sidebarMenu(
         menuItem("Introduction", tabName="intro", icon=icon("ambulance")),
         menuItem("Patient Outcomes", tabName="bysex", icon=icon("ambulance")),

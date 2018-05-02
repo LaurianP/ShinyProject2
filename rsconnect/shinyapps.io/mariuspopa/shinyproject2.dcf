@@ -5,8 +5,9 @@ account: mariuspopa
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 335527
-bundleId: 1351425
+bundleId: 1352055
 url: https://mariuspopa.shinyapps.io/shinyproject2/
-when: 1525266846.84954
+when: 1525285581.24775
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: README.md
