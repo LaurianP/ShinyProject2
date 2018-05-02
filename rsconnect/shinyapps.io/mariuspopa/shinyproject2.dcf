@@ -1,0 +1,10 @@
+name: shinyproject2
+title:
+username:
+account: mariuspopa
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 335527
+bundleId: 1350808
+url: https://mariuspopa.shinyapps.io/shinyproject2/
+when: 1525238257.18775

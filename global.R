@@ -11,7 +11,7 @@ library(plotly)
 # Global Settings
 DEBUG = FALSE
 
-setwd('C:/Users/popaz/Documents/DataScience/ShinyProject/')
+setwd('C:/Users/popaz/Documents/DataScience/ShinyProject2/')
 source("./helpers.R")
 source("./wcloud.R")
 
