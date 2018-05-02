@@ -5,6 +5,8 @@ account: mariuspopa
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 335527
-bundleId: 1350808
+bundleId: 1351425
 url: https://mariuspopa.shinyapps.io/shinyproject2/
-when: 1525238257.18775
+when: 1525266846.84954
+asMultiple: FALSE
+asStatic: FALSE

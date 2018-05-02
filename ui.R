@@ -12,6 +12,7 @@ shinyUI(dashboardPage(skin = "black",
     dashboardSidebar(
       sidebarUserPanel("Marius"),
       sidebarMenu(
+        menuItem("Introduction", tabName="intro", icon=icon("ambulance")),
         menuItem("Patient Outcomes", tabName="bysex", icon=icon("ambulance")),
         menuItem("Drugs Outcomes", tabName="bydrug", icon=icon("ambulance")),
         menuItem("Occurence Map", tabName="map1", icon=icon("map")),
@@ -20,6 +21,31 @@ shinyUI(dashboardPage(skin = "black",
     ),
     dashboardBody(
       tabItems(
+        tabItem(tabName = "intro", 
+            #fluidPage(
+               #box(width=10, 
+                #   title = "FDA Adverse Event Database - A Visualization",
+                   tags$ul(
+                     tags$li("Data: The data set was downloaded from Enimga, with the originator being the US FDA."),
+                     p(""),
+                     tags$li("Data Purpose: Surveillance by FDA of drugs' adverse effects after they are approved. "),
+                     p(""),
+                     tags$li("Data Size: 4.5 million rows by 60 fields, covering 2001-2015"),
+                     p(""),
+                     tags$li("Data Size: for the purpose of hosting the app, I reduced the dataset to about 200k rows, covering only Jan 2015"),
+                     p(""),
+                     tags$li("Aim 1: Visualizing patient demographics."),
+                     p(""),
+                     tags$li("Aim 2: Visualizing the correlation between drugs and adverse events (challenge/rechallenge)."),
+                     p(""),
+                     tags$li("Aim 3: Visualizing the events and ultimate outcomes associated with a single drug."),
+                     p(""),
+                     tags$li("Aim 4: Visualizing the geographic distribution of adverse event reports received by the FDA."),
+                     p("")
+                  )
+              # ) # end box
+          #  ) # end fluid page
+        ),
         tabItem(tabName = "drugspec", 
           fluidRow(
             column(width=3, 
@@ -72,8 +98,16 @@ shinyUI(dashboardPage(skin = "black",
                                   label = "Rechallenge",
                                   choices = chOptions())
             ),
-            column(width=3, 
-                   textOutput("explainChallenge")
+            column(width=4,
+                  tags$ul(
+                    tags$li("Positive dechallenge:stop drug, AE stops."),
+                    p(""),
+                    tags$li("Negative dechallenge:stop drug, AE doesn't stop."), 
+                    p(""),
+                    tags$li("Positive rechallenge:restart drug, AE starts."),
+                    p(""),
+                    tags$li("Negative rechallenge:stop drug, AE doesn't stop.")
+                  )
             )
           ),
           fluidRow(

@@ -106,16 +106,6 @@ function(input, output, session) {
       add_trace(y = ~freq, color = ~response)
   })
   
-  output$explainChallenge <- renderText({ 
-    paste(c(
-      "* Positive dechallenge:stop drug, AE stops.", 
-      "* Negative dechallenge:stop drug, AE doesn't stop.",
-      "* Positive rechallenge:restart drug, AE starts.",
-      "* Negative rechallenge:stop drug, AE doesn't stop."), 
-      collapse='')
-  })
-
-  
   map_db = reactive({
     m_db = dbGetByReportDate(
       conn = conn, 
