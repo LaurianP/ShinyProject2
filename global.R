@@ -23,6 +23,6 @@ if(DEBUG==TRUE)
   options(shiny.error=recover)
 }
 
-dbname = "./f2015.sqlite"
-tblname = "f2015"
+dbname = "./f2015jan.sqlite"
+tblname = "f2015jan"
 
