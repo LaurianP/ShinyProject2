@@ -123,9 +123,10 @@ function(input, output, session) {
       day_start = input$mapDateStart,
       day_end = input$mapDateEnd)
     
-    m_db %>%
-      mutate_at('occr_country', 
-                funs(countrycode(., 'iso2c', 'iso3c'))) %>%
+    # assume the NA's are in the US as well, since this is FDA. 
+    m_db                                                  %>%
+      mutate_at('occr_country', funs(countrycode(., 'iso2c', 'iso3c')))   %>%
+      mutate(occr_country=ifelse(is.na(occr_country),'USA', occr_country)) %>%
       group_by(occr_country) %>%
       summarise(n=n())
   })
@@ -222,6 +223,9 @@ function(input, output, session) {
     
     mapBy = map_db()
     value = mapBy$n
+    nSum  = sum(value, na.rm=TRUE)
+    value = value / nSum
+    
     myloc = mapBy$occr_country
     plot_geo(mapBy) %>% 
       add_trace( z = ~value, locations = ~myloc, color= ~value) %>%

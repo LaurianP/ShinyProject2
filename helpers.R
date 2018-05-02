@@ -1,4 +1,4 @@
-rowlimit = 100000 # limiting queries for debugging purposes
+rowlimit = 200000 # limiting queries for debugging purposes
 
 library(countrycode)
 
