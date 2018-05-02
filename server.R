@@ -20,7 +20,7 @@ function(input, output, session) {
     # Normalize 'ASPIRIN.' and 'ASPIRIN']
     raw %>%
       mutate(norm_drugname = stringr::str_extract(drugname, '[A-Z|a-z]+')) %>%
-      select(rept_dt, norm_drugname, dose_amt, dose_unit, pt, outc_cod, outc_cod_definition)
+      select(rept_dt, norm_drugname, pt, outc_cod, outc_cod_definition)
   })
   
   drug_filtered = reactive(

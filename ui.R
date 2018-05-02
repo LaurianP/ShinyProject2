@@ -24,7 +24,7 @@ shinyUI(dashboardPage(skin = "black",
           fluidRow(
             column(width=3, 
               selectizeInput(inputId = "drugname", 
-                             label = "Select A Drug:", 
+                             label = "Select a Drug:", 
                              choices = drugOptions())
             ), #end column 
             column(width=3,
@@ -43,10 +43,10 @@ shinyUI(dashboardPage(skin = "black",
             ) #end column
           ),
           fluidRow(
-            column(width=6,DT::dataTableOutput("drugtable")),
-            column(width=4, offset=2, 
-                   fluidRow(plotOutput("outcomecloud")),
-                   fluidRow(plotOutput("eventcloud"))
+            column(width=5,DT::dataTableOutput("drugtable")),
+            column(width=6, offset=1, 
+                   fluidRow(plotOutput(width="100%", height = "350px", "outcomecloud")),
+                   fluidRow(plotOutput(width="100%", height = "600px", "eventcloud"))
             )
           )
         ),
